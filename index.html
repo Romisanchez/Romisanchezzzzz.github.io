@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Me amas?</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #respuesta {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>¿Me amas?</h1>
+
+<button onclick="mostrarRespuesta('si')">Sí</button>
+<button onclick="cambiarPosicionNo()">No</button>
+
+<p id="respuesta"></p>
+
+<script>
+    function cambiarPosicionNo() {
+        var botonNo = document.querySelector('button:last-of-type');
+        botonNo.style.position = 'absolute';
+        botonNo.style.left = Math.random() * (window.innerWidth - botonNo.clientWidth) + 'px';
+        botonNo.style.top = Math.random() * (window.innerHeight - botonNo.clientHeight) + 'px';
+    }
+
+    function mostrarRespuesta(opcion) {
+        var respuesta = document.getElementById('respuesta');
+        if (opcion === 'si') {
+            respuesta.textContent = 'Yo te amo mas bizcochito';
+        } else {
+            respuesta.textContent = '';
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
